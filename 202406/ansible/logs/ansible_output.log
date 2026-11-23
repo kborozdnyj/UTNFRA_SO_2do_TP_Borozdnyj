@@ -1,0 +1,44 @@
+2024-06-24 18:08:06,499 p=3444395 u=upszot n=ansible | [WARNING]: A duplicate localhost-like entry was found (localhost). First found localhost was 127.0.0.1
+
+2024-06-24 18:08:06,598 p=3444395 u=upszot n=ansible | PLAY [all] **********************************************************************************************************************************************************************************************************************************
+2024-06-24 18:08:06,609 p=3444395 u=upszot n=ansible | TASK [Gathering Facts] **********************************************************************************************************************************************************************************************************************
+2024-06-24 18:08:07,746 p=3444395 u=upszot n=ansible | ok: [localhost]
+2024-06-24 18:08:07,775 p=3444395 u=upszot n=ansible | TASK [include_role : 2do_parcial] ***********************************************************************************************************************************************************************************************************
+2024-06-24 18:08:07,805 p=3444395 u=upszot n=ansible | TASK [2do_parcial : debug] ******************************************************************************************************************************************************************************************************************
+2024-06-24 18:08:07,817 p=3444395 u=upszot n=ansible | ok: [localhost] => {
+    "msg": "Tareas del 2do Parcial"
+}
+2024-06-24 18:08:07,836 p=3444395 u=upszot n=ansible | TASK [Otra tarea] ***************************************************************************************************************************************************************************************************************************
+2024-06-24 18:08:07,851 p=3444395 u=upszot n=ansible | ok: [localhost] => {
+    "msg": "Despues de la ejecucion del rol"
+}
+2024-06-24 18:08:07,885 p=3444395 u=upszot n=ansible | PLAY RECAP **********************************************************************************************************************************************************************************************************************************
+2024-06-24 18:08:07,885 p=3444395 u=upszot n=ansible | localhost                  : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-11-23 05:52:59,697 p=5562 u=kiara n=ansible | [WARNING]: A duplicate localhost-like entry was found (localhost). First found localhost was
+127.0.0.1
+
+2026-11-23 05:52:59,852 p=5562 u=kiara n=ansible | PLAY [all] ****************************************************************************************
+2026-11-23 05:52:59,861 p=5562 u=kiara n=ansible | TASK [Gathering Facts] ****************************************************************************
+2026-11-23 05:53:00,782 p=5562 u=kiara n=ansible | [WARNING]: Platform linux on host localhost is using the discovered Python interpreter at
+/usr/bin/python3.10, but future installation of another Python interpreter could change the
+meaning of that path. See https://docs.ansible.com/ansible-
+core/2.17/reference_appendices/interpreter_discovery.html for more information.
+
+2026-11-23 05:53:00,782 p=5562 u=kiara n=ansible | ok: [localhost]
+2026-11-23 05:53:00,789 p=5562 u=kiara n=ansible | TASK [include_role : 2do_parcial] *****************************************************************
+2026-11-23 05:53:00,812 p=5562 u=kiara n=ansible | included: 2do_parcial for localhost
+2026-11-23 05:53:00,819 p=5562 u=kiara n=ansible | TASK [2do_parcial : Crear directorios alumno y equipo] ********************************************
+2026-11-23 05:53:01,064 p=5562 u=kiara n=ansible | changed: [localhost] => (item=/tmp/2do_parcial/alumno)
+2026-11-23 05:53:01,190 p=5562 u=kiara n=ansible | changed: [localhost] => (item=/tmp/2do_parcial/equipo)
+2026-11-23 05:53:01,200 p=5562 u=kiara n=ansible | TASK [2do_parcial : Generar datos_alumno.txt desde template] **************************************
+2026-11-23 05:53:01,629 p=5562 u=kiara n=ansible | changed: [localhost]
+2026-11-23 05:53:01,636 p=5562 u=kiara n=ansible | TASK [2do_parcial : Generar datos_equipo.txt desde template] **************************************
+2026-11-23 05:53:01,899 p=5562 u=kiara n=ansible | changed: [localhost]
+2026-11-23 05:53:01,907 p=5562 u=kiara n=ansible | TASK [2do_parcial : Configurar sudoers sin password para grupo 2PSupervisores] ********************
+2026-11-23 05:53:02,178 p=5562 u=kiara n=ansible | changed: [localhost]
+2026-11-23 05:53:02,192 p=5562 u=kiara n=ansible | TASK [Otra tarea] *********************************************************************************
+2026-11-23 05:53:02,203 p=5562 u=kiara n=ansible | ok: [localhost] => {
+    "msg": "Despues de la ejecucion del rol"
+}
+2026-11-23 05:53:02,204 p=5562 u=kiara n=ansible | PLAY RECAP ****************************************************************************************
+2026-11-23 05:53:02,204 p=5562 u=kiara n=ansible | localhost                  : ok=7    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

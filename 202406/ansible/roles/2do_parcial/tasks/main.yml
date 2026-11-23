@@ -1,0 +1,26 @@
+---
+- name: "Crear directorios alumno y equipo"
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: directory
+  loop:
+    - /tmp/2do_parcial/alumno
+    - /tmp/2do_parcial/equipo
+
+- name: "Generar datos_alumno.txt desde template"
+  template:
+    src: datos_alumno.j2
+    dest: /tmp/2do_parcial/alumno/datos_alumno.txt
+
+- name: "Generar datos_equipo.txt desde template"
+  template:
+    src: datos_equipo.j2
+    dest: /tmp/2do_parcial/equipo/datos_equipo.txt
+
+- name: "Configurar sudoers sin password para grupo 2PSupervisores"
+  become: yes
+  ansible.builtin.copy:
+    dest: /etc/sudoers.d/2PSupervisores
+    content: "%2PSupervisores ALL=(ALL) NOPASSWD:ALL\n"
+    mode: '0440'
+    validate: 'visudo -cf %s'
